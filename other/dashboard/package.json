@@ -1,0 +1,9 @@
+{   
+    "name": "Dashboard",
+    "version": "0.0.0",
+    "description": "The relajo dashboard",
+    "dependencies": {
+        "firebase": "latest"
+    },
+    "author": "developer"
+}
