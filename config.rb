@@ -63,8 +63,15 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  # deploy.remote = "custom-remote" # remote name or git url, default: origin
+  deploy.branch = "master" # default: gh-pages
 end
