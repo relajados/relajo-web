@@ -1,8 +1,0 @@
-Welcome to the relajo dashboard client!
-
-This client uses [Firebase node.js](https://www.firebase.com/docs/nodejs-quickstart.html)
-
-# Contributing
-1. `brew install npm`
-2. `npm install`
-3. `node client.js`
