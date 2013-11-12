@@ -1,3 +1,6 @@
+
+require 'susy'
+
 ###
 # Compass
 ###
