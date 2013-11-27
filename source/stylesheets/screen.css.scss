@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+@import "compass";
+@import "colors";
+@import "mixins";
+@import "buttons";
+@import "grid";
+
+body {
+  background-color: $bg-color;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: $text-color;
+}
+
+section#welcome {
+  margin-top: 0px;
+  background-color: $blue;
+  color: $bg-color;
+  text-align: center;
+  font-size: 30px;
+  font-family: $title-font-family;
+}
+
+section#epic-buttons {
+
+  button {
+    margin: 20px;
+    @include button($blue, false, '');
+    font-family: $title-font-family;
+    color: $bg-color;
+    @include border-radius(4px);
+  }
+}
+
+#footer-content {
+  margin-top: 30px;
+  padding: 30px;
+  font-family: $title-font-family;
+  font-size: 20px;
+  background-color: black;
+  color: $white;
+  .right {
+    text-align: right;
+    ul {
+      @include horizontal-list;
+      li {
+        margin-right: 15px;
+        a {
+          color: rgb(151, 151, 209);
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

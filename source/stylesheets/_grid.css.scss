@@ -1,0 +1,27 @@
+@import "susy";
+
+$total-columns: 12;
+$column-width: 54px;
+$gutter-width: 30px;
+$grid-padding: $gutter-width;
+
+#main-layout {
+  section {
+    @include span-columns(12,12);
+    min-width: $total-columns * ($column-width + $gutter-width);
+  }
+}
+
+footer {
+  #footer-content {
+    @include span-columns(12,12);
+    min-width: $total-columns * ($column-width + $gutter-width);
+    height: 50px;
+    .left {
+      @include span-columns(6,12);
+    }
+    .right {
+      @include span-columns(6 omega,12);
+    }
+  }
+}
