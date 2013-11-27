@@ -101,7 +101,6 @@ Vald values are 'left' and 'right'
     decoration: none;
   }
   @if $rounded == true {border-radius: .7em};
-  border-bottom: .2em solid darken($bg, 7);
   position: relative;
 
   &:before, &:after{
@@ -115,6 +114,9 @@ Vald values are 'left' and 'right'
   }
   &:hover, &:focus {
             @if $rounded == true {border-radius: .5em;}
+            background-color: $light-blue;
+            color: $white;
+            border: 0;
     box-shadow: 0 0 0 5px lighten($bg, 20);
   }
 }

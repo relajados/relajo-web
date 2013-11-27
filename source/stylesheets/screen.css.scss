@@ -8,7 +8,7 @@
 
 body {
   background-color: black;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: $text-font-family;
   font-weight: 300;
   color: $text-color;
 }
@@ -25,11 +25,13 @@ section#welcome {
 section#epic-buttons {
 
   button {
+    @include button($bg-color, false, '');
+    padding: 10px;
+    width: 160px;
     margin: 20px;
-    @include button($blue, false, '');
-    font-family: $title-font-family;
-    color: $bg-color;
-    @include border-radius(4px);
+    border: 2px dotted $blue;
+    font-family: $text-font-family;
+    color: $white;
   }
 }
 
