@@ -76,5 +76,5 @@ activate :deploy do |deploy|
   deploy.method = :git
   # Optional Settings
   # deploy.remote = "custom-remote" # remote name or git url, default: origin
-  deploy.branch = "gh-pages" # default: gh-pages
+  # deploy.branch = "gh-pages" # default: gh-pages
 end
