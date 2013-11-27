@@ -6,6 +6,7 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     / Use title if it's in the page YAML frontmatter
     %script{:src => "http://code.jquery.com/jquery-1.10.1.min.js"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple", :rel => "stylesheet", :type => "text/css"}/
     %title= current_page.data.title || "The Middleman"
     = stylesheet_link_tag "normalize", "screen"
     = javascript_include_tag  "all"
@@ -13,3 +14,15 @@
     #main-layout
       .container
         = yield
+
+    %footer
+      #footer-content
+        .left
+          Relajo web is a product proudly brought to you by the Aentos team without the approval of the bosses
+        .right
+          %ul
+            %li
+              %a{href: 'http://www.petardas.com'} Terms of service
+            %li
+              %a{href: 'http://www.youporn.com'} Privacy Policy
+

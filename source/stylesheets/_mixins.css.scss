@@ -1,18 +1,22 @@
 
 section {
-  //background-color: #ccc;
+
+  margin-top: 30px;
 
   .title {
     background-color: $bg-color;
     color: $white;
     text-transform: upcase;
-    border-left: 10px solid $green;
+    border-left: 10px solid $blue;
     padding-left: 10px;
     height: 30px;
     line-height: 30px;
-    font-size: 20px;
+    font-family: $title-font-family;
+    font-size: 25px;
   }
   .content {
+    p { font-size: 18px; }
     margin: 20px;
+    font-family: $title-font-family;
   }
 }
