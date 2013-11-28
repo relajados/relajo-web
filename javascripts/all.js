@@ -1,21 +1,8 @@
 (function() {
   $(function() {
-    var container, index, mplayer;
-    mplayer = new Mplayer("https://mplayerjs.herokuapp.com");
-    container = $('#epic-buttons').find('.content');
-    index = "https://dl.dropboxusercontent.com/s/r7w50sbrugaleqx/index.json?dl=1&token_hash=AAEM6DM-pXTohg0df9dzHxgv4l2V_gDnwRkJ_5dv9OtpNQ";
-    return $.get(index, function(data) {
-      var json;
-      json = $.parseJSON(data);
-      return $(json).each(function(index, item) {
-        var button;
-        button = $("<button />");
-        button.text(item.name);
-        button.on("click", function() {
-          return mplayer.play(item.url);
-        });
-        return container.append(button);
-      });
+    return $('#bSubmit').submit(function() {
+      $('#epic-buttons .content button:first').click();
+      return false;
     });
   });
 
@@ -33,6 +20,42 @@ function Mplayer(a){this.server=a,this.play=function(a){$.post(this.server+"/pla
     });
     return container.find('button#stop').click(function() {
       return mplayer.stop();
+    });
+  });
+
+}).call(this);
+(function() {
+  var ButtonsController, relajo;
+
+  relajo = angular.module("relajo", ["relajo.controllers"]);
+
+  angular.module("relajo.controllers", []);
+
+  ButtonsController = function($scope, $http) {
+    var index, mplayer;
+    mplayer = new Mplayer("https://mplayerjs.herokuapp.com");
+    index = "https://dl.dropboxusercontent.com/s/r7w50sbrugaleqx/index.json?dl=1&token_hash=AAEM6DM-pXTohg0df9dzHxgv4l2V_gDnwRkJ_5dv9OtpNQ";
+    $http.get(index).success(function(data) {
+      return $scope.buttons = data;
+    });
+    return $scope.bClick = function(url) {
+      return mplayer.play(url);
+    };
+  };
+
+  angular.module("relajo.controllers").controller("ButtonsController", ['$scope', '$http', ButtonsController]);
+
+}).call(this);
+(function() {
+  $(function() {
+    var container, mplayer;
+    mplayer = new Mplayer("https://mplayerjs.herokuapp.com");
+    container = $('#say').find('.content');
+    return container.find('button').click(function() {
+      var lang, message;
+      lang = container.find('select').val();
+      message = container.find('textarea').val();
+      return mplayer.play("http://translate.google.com/translate_tts?tl=" + lang + "&q=" + message);
     });
   });
 
