@@ -13,5 +13,21 @@
 
 %section#epic-buttons
   .title Epic buttons
+  .content(ng-controller="ButtonsController")
+    %form#bSubmit
+      %label{for: "#search-button"}
+        Search Button:
+      %input#search-button(type="text" ng-model="search.name")
+    %button(ng-repeat="button in buttons | filter:search" ng-click="bClick(button.url)")
+      {{button.name}}
+
+%section#say
+  .title Say
   .content
-    %p These are the epic buttons
+    %p.subtitle This is the say
+    %textarea.say
+    %p.say-interface
+      %select.language
+        %option{value: 'es'} Spanish
+        %option{value: 'en'} English
+      %button Say
