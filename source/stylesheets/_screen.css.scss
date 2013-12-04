@@ -54,6 +54,14 @@ section#epic-buttons {
       font-family: $text-font-family;
     }
   }
+  #add-button {
+    margin-top: 20px;
+    text-align: center;
+    border: 2px dotted $blue;
+    input.url {
+      width: 400px;
+    }
+  }
 }
 
 section#say {

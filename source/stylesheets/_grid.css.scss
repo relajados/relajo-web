@@ -9,6 +9,9 @@ $grid-padding: $gutter-width;
   section {
     @include span-columns(12,12);
     min-width: $total-columns * ($column-width + $gutter-width);
+    .subsection {
+      @include span-columns(12,12);
+    }
   }
 }
 

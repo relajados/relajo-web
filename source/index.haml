@@ -17,9 +17,15 @@
     %form#bSubmit
       %label{for: "#search-button"}
         Search Button:
-      %input#search-button(type="text" ng-model="search.name")
+      %input#search-button(type="text" ng-model="search.label")
     %button(ng-repeat="button in buttons | filter:search" ng-click="bClick(button.url)")
-      {{button.name}}
+      {{button.label}}
+
+    #add-button.subsection
+      %ng-form
+        %input.label{"ng-model" => "button.label", :placeholder => "Label", :type => "text"}
+        %input.url{"ng-model" => "button.url", :placeholder => "URL", :type => "text"}
+        %button(ng-click="addButton()") Add button
 
 %section#say
   .title Say
