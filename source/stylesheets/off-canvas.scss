@@ -1,0 +1,52 @@
+$menu-bg-color: $bg-color;
+$menu-border-color: $blue;
+#app-menu {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background: $menu-bg-color;
+  border-right: 5px solid $menu-border-color;
+  @include transition-property(left);
+  @include transition-duration(0.5s);
+  &.active, &:hover {
+    left: 0;
+  }
+  nav {
+    h2 {
+      background-color: $bg-color;
+      color: $white;
+      text-transform: upcase;
+      border-left: 10px solid $blue;
+      padding-left: 10px;
+      height: 30px;
+      line-height: 30px;
+      font-family: $title-font-family;
+      font-size: 28px;
+    }
+    ul#nav-links {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li.nav-link {
+        a {
+          @extend %btn;
+          display: block;
+          width: auto;
+          padding: 0;
+          text-align: center;
+          line-height: 52px;
+          height: 52px;
+          border-width: 2px 0;
+          &:hover {
+            width: auto;
+            border-width: 5px 0;
+            margin: 0;
+            line-height: 46px;
+          }
+        }
+      }
+    }
+  }
+}
