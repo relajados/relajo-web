@@ -23,6 +23,8 @@ ButtonsController = ($scope, $http) ->
         url: $scope.button.url
 
     ).success((data) ->
+      $scope.button.label = ''
+      $scope.button.url = ''
       $scope.buttons.push(data)
     )
 
