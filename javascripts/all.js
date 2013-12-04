@@ -1,3 +1,5 @@
+window.BackendURL = "http://rufino-api.herokuapp.com"
+;
 (function() {
   $(function() {
     return $('#bSubmit').submit(function() {
@@ -32,14 +34,31 @@ function Mplayer(a){this.server=a,this.play=function(a){$.post(this.server+"/pla
   angular.module("relajo.controllers", []);
 
   ButtonsController = function($scope, $http) {
-    var index, mplayer;
+    var buttonsUrl, mplayer;
     mplayer = new Mplayer("https://mplayerjs.herokuapp.com");
-    index = "https://dl.dropboxusercontent.com/s/r7w50sbrugaleqx/index.json?dl=1&token_hash=AAEM6DM-pXTohg0df9dzHxgv4l2V_gDnwRkJ_5dv9OtpNQ";
-    $http.get(index).success(function(data) {
+    buttonsUrl = window.BackendURL + '/v1/relajo/buttons.json';
+    $http.get(buttonsUrl).success(function(data) {
       return $scope.buttons = data;
     });
-    return $scope.bClick = function(url) {
+    $scope.bClick = function(url) {
       return mplayer.play(url);
+    };
+    return $scope.addButton = function() {
+      return $http({
+        method: 'POST',
+        url: buttonsUrl,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        params: {
+          label: $scope.button.label,
+          url: $scope.button.url
+        }
+      }).success(function(data) {
+        $scope.button.label = '';
+        $scope.button.url = '';
+        return $scope.buttons.push(data);
+      });
     };
   };
 

@@ -414,8 +414,14 @@ section#play-media .content button, section#epic-buttons button, section#say .co
   margin-right: 3.06748%;
   display: inline;
   min-width: 1008px; }
+  /* line 12, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
+  #main-layout section .subsection {
+    width: 100%;
+    float: left;
+    margin-right: 3.06748%;
+    display: inline; }
 
-/* line 16, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
+/* line 19, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
 footer #footer-content {
   width: 100%;
   float: left;
@@ -423,13 +429,13 @@ footer #footer-content {
   display: inline;
   min-width: 1008px;
   height: 50px; }
-  /* line 20, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
+  /* line 23, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
   footer #footer-content .left {
     width: 48.46626%;
     float: left;
     margin-right: 3.06748%;
     display: inline; }
-  /* line 23, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
+  /* line 26, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_grid.css.scss */
   footer #footer-content .right {
     width: 48.46626%;
     float: right;
@@ -489,31 +495,39 @@ section#epic-buttons button {
     width: 166px;
     margin: 17px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+/* line 57, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+section#epic-buttons #add-button {
+  margin-top: 20px;
+  text-align: center;
+  border: 2px dotted #00ebce; }
+  /* line 61, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+  section#epic-buttons #add-button input.url {
+    width: 400px; }
 
-/* line 60, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+/* line 68, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
 section#say .content {
   text-align: center; }
-  /* line 62, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+  /* line 70, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
   section#say .content p.subtitle {
     text-align: left; }
-  /* line 63, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+  /* line 71, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
   section#say .content textarea {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     width: 800px;
     height: 100px; }
-  /* line 68, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+  /* line 76, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
   section#say .content p.say-interface {
     margin-top: 20px;
     font-size: 15px; }
-    /* line 71, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+    /* line 79, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
     section#say .content p.say-interface button {
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
-    /* line 75, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+    /* line 83, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
     section#say .content p.say-interface select {
       background-color: #404040;
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
-/* line 85, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+/* line 93, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
 #footer-content {
   margin-top: 30px;
   padding: 30px;
@@ -521,10 +535,10 @@ section#say .content {
   font-size: 20px;
   background-color: black;
   color: white; }
-  /* line 92, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+  /* line 100, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
   #footer-content .right {
     text-align: right; }
-    /* line 94, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+    /* line 102, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
     #footer-content .right ul {
       margin: 0;
       padding: 0;
@@ -550,13 +564,13 @@ section#say .content {
         /* line 50, /var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
         #footer-content .right ul li.last {
           padding-right: 0; }
-      /* line 96, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+      /* line 104, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
       #footer-content .right ul li {
         margin-right: 15px; }
-        /* line 98, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+        /* line 106, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
         #footer-content .right ul li a {
           color: #9797d1;
           text-decoration: none; }
-          /* line 101, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
+          /* line 109, /mnt/volumes/coding/content/coding/relajo-web/source/stylesheets/_screen.css.scss */
           #footer-content .right ul li a:hover {
             text-decoration: underline; }

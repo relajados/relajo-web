@@ -40,11 +40,18 @@
               <label for='#search-button'>
                 Search Button:
               </label>
-              <input id='search-button' ng-model='search.name' type='text'>
+              <input id='search-button' ng-model='search.label' type='text'>
             </form>
             <button ng-click='bClick(button.url)' ng-repeat='button in buttons | filter:search'>
-              {{button.name}}
+              {{button.label}}
             </button>
+            <div class='subsection' id='add-button'>
+              <ng-form>
+                <input class='label' ng-model='button.label' placeholder='Label' type='text'>
+                <input class='url' ng-model='button.url' placeholder='URL' type='text'>
+                <button ng-click='addButton()'>Add button</button>
+              </ng-form>
+            </div>
           </div>
         </section>
         <section id='say'>
