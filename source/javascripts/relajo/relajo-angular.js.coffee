@@ -23,7 +23,6 @@ ButtonsController = ($scope, $http) ->
         url: $scope.button.url
 
     ).success((data) ->
-      debugger
       $scope.buttons.push(data)
     )
 
