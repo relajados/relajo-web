@@ -10,9 +10,7 @@ $menu-border-color: $blue;
   border-right: 5px solid $menu-border-color;
   @include transition-property(left);
   @include transition-duration(0.5s);
-  &.active, &:hover {
-    left: 0;
-  }
+  &.active { left: 0; }
   nav {
     h2 {
       background-color: $bg-color;

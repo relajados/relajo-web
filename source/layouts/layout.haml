@@ -14,9 +14,10 @@
   %body{:class => page_classes}
     %a{:href => "https://github.com/relajados/relajo-web"}
       %img{:alt => "Fork me on GitHub", :src => "https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png", :style => "position: absolute; top: 0; right: 0; border: 0;"}/
-    #app-menu(ng-model="appMenu" class="{{appMenu}}")
+    #app-menu(ng-class="appMenu" ng-mouseenter="appMenu = 'active'" ng-mouseleave="appMenu = ''")
       %nav
         %h2 Menu
+        %a#menu-close(ng-click="appMenu = ''") Close
         %ul#nav-links
           %li.nav-link
             %a(href="/") Relajo
@@ -31,7 +32,7 @@
           %nav#section-menu
             %ul
               %li
-                %a(ng-click="appMenu=active") Menu
+                %a#menu-open(ng-click="appMenu = 'active'") Menu
 
         = yield
 
