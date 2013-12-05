@@ -5,7 +5,7 @@ $menu-border-color: $bg-color;
   width: 250px;
   height: 100%;
   position: fixed;
-  top: 0;
+  top: 58px;
   left: -250px;
   background: $menu-bg-color;
   border-right: 10px solid lighten($menu-border-color, 50%);
@@ -23,6 +23,11 @@ $menu-border-color: $bg-color;
       line-height: 30px;
       font-family: $title-font-family;
       font-size: 28px;
+      a {
+        float: right;
+        margin-right: 20px;
+        cursor: pointer;
+      }
     }
     ul#nav-links {
       list-style: none;
