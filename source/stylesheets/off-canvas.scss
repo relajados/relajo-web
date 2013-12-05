@@ -1,5 +1,6 @@
 $menu-bg-color: $bg-color;
-$menu-border-color: $blue;
+$menu-border-color: $bg-color;
+
 #app-menu {
   width: 250px;
   height: 100%;
@@ -7,7 +8,7 @@ $menu-border-color: $blue;
   top: 0;
   left: -250px;
   background: $menu-bg-color;
-  border-right: 5px solid $menu-border-color;
+  border-right: 10px solid lighten($menu-border-color, 50%);
   @include transition-property(left);
   @include transition-duration(0.5s);
   &.active { left: 0; }
@@ -29,7 +30,10 @@ $menu-border-color: $blue;
       padding: 0px;
       li.nav-link {
         a {
-          @extend %btn;
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $title-font-family;
           display: block;
           width: auto;
           padding: 0;
@@ -37,11 +41,23 @@ $menu-border-color: $blue;
           line-height: 52px;
           height: 52px;
           border-width: 2px 0;
-          &:hover {
-            width: auto;
-            border-width: 5px 0;
-            margin: 0;
-            line-height: 46px;
+          padding-top: 3px;
+          font-size: 18px;
+          &.relajo {
+            border-top: 2px solid $relajo-color;
+            &:hover {
+              padding-top: 0px;
+              border-top: 5px solid $relajo-color;
+              background-color: lighten( $bg-color, 10% ) ;
+            }
+          }
+          &.work {
+            border-top: 2px solid $work-color;
+            &:hover {
+              padding-top: 0px;
+              border-top: 5px solid $work-color;
+              background-color: lighten( $bg-color, 10% ) ;
+            }
           }
         }
       }
