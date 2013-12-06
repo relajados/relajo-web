@@ -7,7 +7,15 @@ body {
   font-family: $text-font-family;
   font-weight: 300;
   color: $text-color;
-  a.github img { z-index: 2;  }
+  overflow-x: hidden;
+  max-width: 100%;
+  a.github {
+    display: none;
+    @include at-breakpoint(6) {
+      display: block;
+    }
+    img { z-index: 2;  }
+  }
 }
 
 header#welcome {
@@ -43,31 +51,45 @@ header#welcome {
         font-size: 28px;
         margin-left: 30px;
       }
-      &:first-child a#menu-open {
+      &:first-child a {
         margin-left: 10px;
         font-family: Flaticon;
+        &#menu-open {
+          &.active {
+            display: none;
+          }
+        }
+        &#menu-close {
+          display: none;
+          &.active {
+            @include inline-block;
+          }
+        }
       }
     }
   }
 }
 
-#footer-content {
-  margin-top: 30px;
-  padding: 30px;
-  font-family: $title-font-family;
-  font-size: 20px;
-  background-color: black;
-  color: $white;
-  .right {
-    text-align: right;
-    ul {
-      @include horizontal-list;
-      li {
-        margin-right: 15px;
-        a {
-          color: rgb(151, 151, 209);
-          text-decoration: none;
-          &:hover { text-decoration: underline;
+footer {
+  padding-left: 15px;
+  #footer-content {
+    margin-top: 30px;
+    max-width: 100%;
+    font-family: $title-font-family;
+    font-size: 20px;
+    background-color: black;
+    color: $white;
+    .right {
+      text-align: right;
+      ul {
+        @include inline-block-list;
+        li {
+          margin-right: 15px;
+          a {
+            color: rgb(151, 151, 209);
+            text-decoration: none;
+            &:hover { text-decoration: underline;
+            }
           }
         }
       }

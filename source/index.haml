@@ -17,7 +17,7 @@
     %button(ng-repeat="button in buttons | filter:search" ng-click="bClick(button.url)")
       {{button.label}}
 
-    #add-button.subsection
+    #add-button
       %ng-form
         %input.label{"ng-model" => "button.label", :placeholder => "Label", :type => "text"}
         %input.url{"ng-model" => "button.url", :placeholder => "URL", :type => "text"}

@@ -2,7 +2,7 @@
 %html(ng-app="relajo")
   %head
     %meta{:charset => "utf-8"}/
-    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, minimum-scale=0.9")
     / Always force latest IE rendering engine or request Chrome Frame
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     / Use title if it's in the page YAML frontmatter
@@ -19,7 +19,6 @@
       %nav
         %h2
           Menu
-          %a#menu-close.flaticon-cross5(ng-click="appMenu = ''")
         %ul#nav-links
           %li.nav-link
             %a.relajo(href="/") Relajo
@@ -34,7 +33,8 @@
           %nav#section-menu
             %ul
               %li
-                %a.flaticon-menu10#menu-open(ng-click="appMenu = 'active'")
+                %a.flaticon-menu10#menu-open(ng-click="appMenu = 'active'" ng-class="appMenu")
+                %a.flaticon-cross5#menu-close(ng-click="appMenu = ''" ng-class="appMenu")
               %li
                 %a(href="#play-media" ng-click="$anchorScroll('play-media')")
                   Play media
