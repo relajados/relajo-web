@@ -23,9 +23,9 @@
           Menu
         %ul#nav-links
           %li.nav-link
-            %a.relajo(href="#/") Relajo
+            %a.relajo(href="#/" ng-click="appMenu = ''") Relajo
           %li.nav-link.work
-            %a.work(href="#/work") Work
+            %a.work(href="#/work" ng-click="appMenu = ''") Work
     #main-layout
       .container(ng-view)
 
