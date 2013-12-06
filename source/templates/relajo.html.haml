@@ -1,3 +1,22 @@
+%header#welcome
+  %h1 Welcome to Relajo web
+  %h2 Your f*cking best choice
+#menu
+  %nav#section-menu
+    %ul
+      %li
+        %a.flaticon-menu10#menu-open(ng-click="$parent.appMenu = 'active'" ng-class="$parent.appMenu")
+        %a.flaticon-cross5#menu-close(ng-click="$parent.appMenu = ''" ng-class="$parent.appMenu")
+      %li
+        %a(href="#play-media" ng-click="$anchorScroll('play-media')")
+          Play media
+      %li
+        %a(href="#epic-buttons" ng-click="$anchorScroll('epic-buttons')")
+          Epic buttons
+      %li
+        %a(href="#say" ng-click="$anchorScroll('say')")
+          Say
+
 %section#play-media
   .title Play media
   .content

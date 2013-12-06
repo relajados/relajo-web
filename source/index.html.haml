@@ -8,11 +8,13 @@
     / Use title if it's in the page YAML frontmatter
     %script{:src => "http://code.jquery.com/jquery-1.10.1.min.js"}
     %script{src: "//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"}
+    %script{src: "//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"}
+    %script{src: "//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-touch.js"}
     %link{:href => "http://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple", :rel => "stylesheet", :type => "text/css"}/
     %title= current_page.data.title || "Relajo Web"
     = stylesheet_link_tag "all"
     = javascript_include_tag  "all"
-  %body{:class => page_classes}
+  %body(ng-swipe-left="appMenu = ''" ng-swipe-right="appMenu = 'active'")
     %a.github{:href => "https://github.com/relajados/relajo-web"}
       %img{:alt => "Fork me on GitHub", :src => "https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png", :style => "position: absolute; top: 0; right: 0; border: 0;"}/
     #app-menu(ng-class="appMenu" ng-mouseenter="appMenu = 'active'" ng-mouseleave="appMenu = ''")
@@ -21,31 +23,11 @@
           Menu
         %ul#nav-links
           %li.nav-link
-            %a.relajo(href="/") Relajo
+            %a.relajo(href="#/") Relajo
           %li.nav-link.work
-            %a.work(href="/work") Work
+            %a.work(href="#/work") Work
     #main-layout
-      .container
-        %header#welcome
-          %h1 Welcome to Relajo web
-          %h2 Your f*cking best choice
-        #menu
-          %nav#section-menu
-            %ul
-              %li
-                %a.flaticon-menu10#menu-open(ng-click="appMenu = 'active'" ng-class="appMenu")
-                %a.flaticon-cross5#menu-close(ng-click="appMenu = ''" ng-class="appMenu")
-              %li
-                %a(href="#play-media" ng-click="$anchorScroll('play-media')")
-                  Play media
-              %li
-                %a(href="#epic-buttons" ng-click="$anchorScroll('epic-buttons')")
-                  Epic buttons
-              %li
-                %a(href="#say" ng-click="$anchorScroll('say')")
-                  Say
-
-        = yield
+      .container(ng-view)
 
     %footer
       #footer-content
