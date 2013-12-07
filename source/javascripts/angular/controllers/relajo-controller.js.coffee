@@ -1,15 +1,5 @@
-relajo = angular.module "relajo", ["ngRoute", "ngTouch", "relajo.controllers"]
+RelajoController = ($scope, $http) ->
 
-relajo.config ["$routeProvider", ($routeProvider, $locationProvider) ->
-    $routeProvider
-      .when("/", templateUrl: "templates/relajo.html", controller: "ButtonsController")
-      .when("/work", templateUrl: "templates/work.html")
-      .otherwise redirectTo: "/"
-]
-
-angular.module("relajo.controllers", [])
-
-ButtonsController = ($scope, $http) ->
   mplayer = new Mplayer("https://mplayerjs.herokuapp.com")
 
   buttonsUrl = window.BackendURL + '/v1/relajo/buttons.json'
@@ -37,4 +27,4 @@ ButtonsController = ($scope, $http) ->
 
 
 
-angular.module("relajo.controllers").controller "ButtonsController", [ '$scope', '$http', ButtonsController ]
+angular.module("app.controllers").controller "RelajoController", [ '$scope', '$http', RelajoController ]

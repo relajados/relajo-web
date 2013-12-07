@@ -28,12 +28,12 @@
 
 %section#epic-buttons
   .title Epic buttons
-  .content(ng-controller="ButtonsController")
-    %form#bSubmit
+  .content
+    %form#bSubmit(ng-submit="(bClick(buttonsFiltered[0].url))")
       %label{for: "#search-button"}
         Search Button:
       %input#search-button(type="text" ng-model="search.label")
-    %button(ng-repeat="button in buttons | filter:search" ng-click="bClick(button.url)")
+    %button(ng-repeat="button in buttonsFiltered = (buttons | filter:search)" ng-click="bClick(button.url)")
       {{button.label}}
 
     #add-button
