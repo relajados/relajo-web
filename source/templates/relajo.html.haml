@@ -20,20 +20,21 @@
 %section#play-media
   .title Play media
   .content
-    %p This allows you to play urls «on the fly»
-    .play-interface
-      %input.play-media
-      %button#play Play
-      %button#stop Stop
+    %form(ng-submit="mPlay(mediaUrl)")
+      %p This allows you to play urls «on the fly»
+      .play-interface
+        %input.play-media(ng-model="mediaUrl")
+        %input#play(type="submit" value="Play")
+        %a#stop(ng-click="mStop()") Stop
 
 %section#epic-buttons
   .title Epic buttons
   .content
-    %form#bSubmit(ng-submit="(bClick(buttonsFiltered[0].url))")
+    %form#bSubmit(ng-submit="(bPlay(buttonsFiltered[0].url))")
       %label{for: "#search-button"}
         Search Button:
       %input#search-button(type="text" ng-model="search.label")
-    %button(ng-repeat="button in buttonsFiltered = (buttons | filter:search)" ng-click="bClick(button.url)")
+    %button(ng-repeat="button in buttonsFiltered = (buttons | filter:search)" ng-click="bPlay(button.url)")
       {{button.label}}
 
     #add-button
@@ -45,10 +46,11 @@
 %section#say
   .title Say
   .content
-    %p.subtitle This is the say
-    %textarea.say
-    %p.say-interface
-      %select.language
-        %option{value: 'es'} Spanish
-        %option{value: 'en'} English
-      %button Say
+    %form(ng-submit="sPlay(sText, sLang)")
+      %label.subtitle(for="say-text") This is the say
+      %textarea#say-text(ng-model="sText")
+      %p.say-interface
+        %select.language(ng-model="sLang" ng-init="sLang = 'es'")
+          %option{value: 'es'} Spanish
+          %option{value: 'en'} English
+        %input(type="submit" value="Say")

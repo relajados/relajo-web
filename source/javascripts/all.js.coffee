@@ -1,7 +1,5 @@
 #= require environment_vars
-#= require relajo/mplayer.min
-#= require relajo/play_media
-#= require relajo/say
+#= require vendors/mplayer.min
 #= require angular/angular-controllers
 #= require_tree ./angular/controllers
 #= require angular/angular-directives
