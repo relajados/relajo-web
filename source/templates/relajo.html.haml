@@ -8,13 +8,13 @@
         %a.flaticon-menu10#menu-open(ng-click="$parent.appMenu = 'active'" ng-class="$parent.appMenu")
         %a.flaticon-cross5#menu-close(ng-click="$parent.appMenu = ''" ng-class="$parent.appMenu")
       %li
-        %a(ng-href="#/?scroll=play-media")
+        %a(href="#play-media" animate-scroll)
           Play media
       %li
-        %a(ng-href="#/?scroll=epic-buttons")
+        %a(href="#epic-buttons" animate-scroll)
           Epic buttons
       %li
-        %a(ng-href="#/?scroll=say")
+        %a(href="#say" animate-scroll)
           Say
 
 %section#play-media
