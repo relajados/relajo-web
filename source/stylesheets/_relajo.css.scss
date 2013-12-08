@@ -63,24 +63,32 @@ section#say {
   padding-top: 65px;
   .content {
     text-align: center;
-    label.subtitle { text-align: left; }
-    textarea {
-      font-family: $text-font-family;
-      width: 800px;
-      height: 100px;
-      max-width: 100%;
-    }
-    p.say-interface {
-      margin-top: 20px;
-      font-size: 15px;
-      input[type="submit"] {
-        @extend %btn;
-        font-family: $text-font-family;
+    form {
+      @include inline-block;
+      label.subtitle { 
+        text-align: left;
+        font-size: 26px;
+        display: block;
+        margin-bottom: 10px;
       }
-      select {
-        @extend %btn;
-        background-color: $bg-color;
+      textarea {
         font-family: $text-font-family;
+        width: 800px;
+        height: 100px;
+        max-width: 100%;
+      }
+      p.say-interface {
+        margin-top: 20px;
+        font-size: 15px;
+        input[type="submit"] {
+          @extend %btn;
+          font-family: $text-font-family;
+        }
+        select {
+          @extend %btn;
+          background-color: $bg-color;
+          font-family: $text-font-family;
+        }
       }
     }
   }
