@@ -65,6 +65,7 @@ section#say {
     text-align: center;
     form {
       @include inline-block;
+      max-width: 100%;
       label.subtitle { 
         text-align: left;
         font-size: 26px;
