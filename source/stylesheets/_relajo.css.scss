@@ -1,0 +1,89 @@
+
+section#play-media {
+  padding-top: 65px;
+  .content {
+    text-align: center;
+    p { text-align: left; }
+    input {
+      font-family: $text-font-family;
+      height: 30px;
+      width: 500px;
+      max-width: 100%;
+    }
+    button {
+      @extend %btn;
+      margin-top: 20px;
+      font-family: $text-font-family;
+      &:first-child { margin-left: 30px; }
+    }
+  }
+}
+
+
+section#epic-buttons {
+  padding-top: 65px;
+  text-align: center;
+  .title { text-align: left; }
+  label {
+    font-size: 26px;
+    margin: 0 10px 0 20px;
+  }
+  input {
+    font-family: $text-font-family;
+    height: 30px;
+    width: 130px;
+    max-width: 100%;
+    &:first-child { margin: 20px 0; }
+  }
+  button {
+    @extend %btn;
+    width: 160px;
+    margin: 20px;
+    font-family: $text-font-family;
+    &:hover {
+      width: 166px;
+      margin: 17px;
+      font-family: $text-font-family;
+    }
+    &:first-child { margin-left: 30px; }
+  }
+  #add-button {
+    @include inline-block;
+    @include experimental-value(width, calc(100% - 20px));
+    margin-top: 20px;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: $blue;
+    input.url {
+      width: 400px;
+    }
+  }
+}
+
+section#say {
+  padding-top: 65px;
+  .content {
+    text-align: center;
+    p.subtitle { text-align: left; }
+    textarea {
+      font-family: $text-font-family;
+      width: 800px;
+      height: 100px;
+      max-width: 100%;
+    }
+    p.say-interface {
+      margin-top: 20px;
+      font-size: 15px;
+      button {
+        @extend %btn;
+        font-family: $text-font-family;
+      }
+      select {
+        @extend %btn;
+        background-color: $bg-color;
+        font-family: $text-font-family;
+      }
+    }
+  }
+}
+

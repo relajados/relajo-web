@@ -7,18 +7,16 @@ $grid-padding: $gutter-width;
 
 #main-layout {
   section {
-    @include span-columns(12,12);
-    min-width: $total-columns * ($column-width + $gutter-width);
+    @include span-columns(12 omega, 12);
     .subsection {
-      @include span-columns(12,12);
+      @include span-columns(12 omega,12);
     }
   }
 }
 
 footer {
   #footer-content {
-    @include span-columns(12,12);
-    min-width: $total-columns * ($column-width + $gutter-width);
+    @include span-columns(12 omega, 12);
     height: 50px;
     .left {
       @include span-columns(6,12);

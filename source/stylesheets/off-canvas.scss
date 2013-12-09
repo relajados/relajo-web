@@ -1,0 +1,71 @@
+$menu-bg-color: $bg-color;
+$menu-border-color: $bg-color;
+
+#app-menu {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 58px;
+  left: -250px;
+  background: $menu-bg-color;
+  border-right: 10px solid lighten($menu-border-color, 50%);
+  @include transition-property(left);
+  @include transition-duration(0.5s);
+  &.active { left: 0; }
+  nav {
+    h2 {
+      background-color: $bg-color;
+      color: $white;
+      text-transform: upcase;
+      border-left: 10px solid $blue;
+      padding-left: 10px;
+      height: 30px;
+      line-height: 30px;
+      font-family: $title-font-family;
+      font-size: 28px;
+      a {
+        float: right;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+    ul#nav-links {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li.nav-link {
+        a {
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $title-font-family;
+          display: block;
+          width: auto;
+          padding: 0;
+          text-align: center;
+          line-height: 52px;
+          height: 52px;
+          border-width: 2px 0;
+          padding-top: 3px;
+          font-size: 18px;
+          &.relajo {
+            border-top: 2px solid $relajo-color;
+            &:hover {
+              padding-top: 0px;
+              border-top: 5px solid $relajo-color;
+              background-color: lighten( $bg-color, 10% ) ;
+            }
+          }
+          &.work {
+            border-top: 2px solid $work-color;
+            &:hover {
+              padding-top: 0px;
+              border-top: 5px solid $work-color;
+              background-color: lighten( $bg-color, 10% ) ;
+            }
+          }
+        }
+      }
+    }
+  }
+}

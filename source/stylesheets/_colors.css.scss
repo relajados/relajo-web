@@ -1,9 +1,15 @@
 $bg-color: #404040;
 $white: #ffffff;
-
-$blue: #00EBCE;
 $light-blue: #00BBA4;
-$text-color: #ccc;
+$blue: #00EBCE;
+$yellow: #e9bf5b;
+$light-gray: #ccc;
 
+// Fonts
+$text-color: $light-gray;
 $text-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $title-font-family: "Rancho", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Section colors
+$relajo-color: $blue;
+$work-color: $yellow;

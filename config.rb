@@ -17,6 +17,7 @@ require 'susy'
 # Per-page layout changes:
 #
 # With no layout
+page "*", :layout => false
 # page "/path/to/file.html", :layout => false
 #
 # With alternative layout

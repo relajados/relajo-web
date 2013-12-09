@@ -4,5 +4,5 @@ $ ->
 
   container.find('button').click ->
     lang = container.find('select').val()
-    message = container.find('textarea').val()
+    message = container.find('textarea').val().split(' ').join('+')
     mplayer.play "http://translate.google.com/translate_tts?tl=#{lang}&q=#{message}"

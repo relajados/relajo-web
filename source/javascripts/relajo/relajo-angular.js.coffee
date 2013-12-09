@@ -1,4 +1,11 @@
-relajo = angular.module "relajo", ["relajo.controllers"]
+relajo = angular.module "relajo", ["ngRoute", "ngTouch", "relajo.controllers"]
+
+relajo.config ["$routeProvider", ($routeProvider, $locationProvider) ->
+    $routeProvider
+      .when("/", templateUrl: "templates/relajo.html", controller: "ButtonsController")
+      .when("/work", templateUrl: "templates/work.html")
+      .otherwise redirectTo: "/"
+]
 
 angular.module("relajo.controllers", [])
 
