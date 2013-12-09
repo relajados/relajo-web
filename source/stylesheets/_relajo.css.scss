@@ -1,20 +1,40 @@
-
 section#play-media {
   padding-top: 65px;
   .content {
     text-align: center;
-    p { text-align: left; }
-    input {
-      font-family: $text-font-family;
-      height: 30px;
-      width: 500px;
+    form {
+      @include inline-block;
       max-width: 100%;
-    }
-    button {
-      @extend %btn;
-      margin-top: 20px;
-      font-family: $text-font-family;
-      &:first-child { margin-left: 30px; }
+      height: 100px;
+      @include at-breakpoint(6) {
+        height: 80px;
+      }
+      p {
+        margin: 0;
+        text-align: left;
+      }
+      input {
+        font-family: $text-font-family;
+        height: 30px;
+        width: 500px;
+        max-width: 100%;
+        @include inline-block;
+      }
+      a,input[type="submit"] {
+        @extend %btn;
+        @include inline-block;
+        font-family: $text-font-family;
+        margin-top: 10px;
+        @include at-breakpoint(6) {
+          margin-top: 3px;
+          &:hover { margin-top: 0; }
+        }
+      }
+      a, a:hover {
+        height: 16px;
+        width: 106px;
+      }
+      input[type="submit"]:first-child { margin-left: 30px; }
     }
   }
 }
@@ -64,24 +84,33 @@ section#say {
   padding-top: 65px;
   .content {
     text-align: center;
-    p.subtitle { text-align: left; }
-    textarea {
-      font-family: $text-font-family;
-      width: 800px;
-      height: 100px;
+    form {
+      @include inline-block;
       max-width: 100%;
-    }
-    p.say-interface {
-      margin-top: 20px;
-      font-size: 15px;
-      button {
-        @extend %btn;
-        font-family: $text-font-family;
+      label.subtitle { 
+        text-align: left;
+        font-size: 26px;
+        display: block;
+        margin-bottom: 10px;
       }
-      select {
-        @extend %btn;
-        background-color: $bg-color;
+      textarea {
         font-family: $text-font-family;
+        width: 800px;
+        height: 100px;
+        max-width: 100%;
+      }
+      p.say-interface {
+        margin-top: 20px;
+        font-size: 15px;
+        input[type="submit"] {
+          @extend %btn;
+          font-family: $text-font-family;
+        }
+        select {
+          @extend %btn;
+          background-color: $bg-color;
+          font-family: $text-font-family;
+        }
       }
     }
   }
