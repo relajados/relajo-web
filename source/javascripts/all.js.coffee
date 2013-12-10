@@ -1,5 +1,6 @@
 #= require environment_vars
 #= require vendors/mplayer.min
+#= require vendors/ngprogress-lite.min
 #= require angular/angular-controllers
 #= require_tree ./angular/controllers
 #= require angular/angular-directives

@@ -1,4 +1,4 @@
-app = angular.module "app", ["ngRoute", "ngTouch", "app.controllers", "app.directives"]
+app = angular.module "app", ["ngRoute", "ngTouch", "ngProgressLite", "app.controllers", "app.directives"]
 
 app.config ($routeProvider, $locationProvider) ->
   $routeProvider

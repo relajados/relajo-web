@@ -1,4 +1,6 @@
-RelajoController = ($scope, $http) ->
+RelajoController = ($scope, $http, ngProgressLite) ->
+
+  ngProgressLite.start()
 
   mplayer = new Mplayer("https://mplayerjs.herokuapp.com")
 
@@ -6,6 +8,7 @@ RelajoController = ($scope, $http) ->
 
   $http.get(buttonsUrl).success (data) ->
     $scope.buttons = data
+    ngProgressLite.done()
 
   $scope.bPlay = (url) ->
     mplayer.play url
@@ -16,9 +19,10 @@ RelajoController = ($scope, $http) ->
   $scope.mPlay = $scope.bPlay
 
   $scope.mStop = -> mplayer.stop()
-    
+
 
   $scope.addButton = () ->
+    ngProgressLite.start()
     $http(
       method: 'POST',
       url: buttonsUrl,
@@ -31,8 +35,9 @@ RelajoController = ($scope, $http) ->
       $scope.button.label = ''
       $scope.button.url = ''
       $scope.buttons.push(data)
+      ngProgressLite.done()
     )
 
 
 
-angular.module("app.controllers").controller "RelajoController", [ '$scope', '$http', RelajoController ]
+angular.module("app.controllers").controller "RelajoController", [ '$scope', '$http', 'ngProgressLite', RelajoController ]
