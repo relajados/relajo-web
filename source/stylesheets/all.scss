@@ -1,12 +1,14 @@
 @charset "utf-8";
 
 @import "normalize";
+@import "vendors/ngprogress-lite";
+@import "vendors/flaticon";
 @import "compass";
 @import "colors";
 @import "mixins";
 @import "buttons";
 @import "grid";
+@import "progress";
 @import "off-canvas";
-@import "vendor/flaticon";
 @import "screen";
 @import "relajo";

@@ -1,0 +1,11 @@
+$barColor: $light-gray;
+
+.ngProgressLiteBar {
+  top: 62px;
+  height: 5px;
+  background: $barColor;
+}
+
+.ngProgressLite .ngProgressLiteBarShadow {
+	@include box-shadow(none);
+}
