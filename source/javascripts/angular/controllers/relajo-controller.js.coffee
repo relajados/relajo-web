@@ -14,7 +14,8 @@ RelajoController = ($scope, $http, ngProgressLite) ->
     mplayer.play url
 
   $scope.sPlay = (text, lang) ->
-    mplayer.play "http://translate.google.com/translate_tts?tl=#{lang}&q=#{text}"
+    normalizedText = text.replace(/\s+/g, '+')
+    mplayer.play "http://translate.google.com/translate_tts?tl=#{lang}&q=#{normalizedText}"
 
   $scope.mPlay = $scope.bPlay
 
