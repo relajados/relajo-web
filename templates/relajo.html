@@ -1,0 +1,79 @@
+<header id='welcome'>
+  <h1>Welcome to Relajo web</h1>
+  <h2>Your f*cking best choice</h2>
+</header>
+<div id='menu'>
+  <nav id='section-menu'>
+    <ul>
+      <li>
+        <a class='flaticon-menu10' id='menu-open' ng-class='$parent.appMenu' ng-click="$parent.appMenu = 'active'"></a>
+        <a class='flaticon-cross5' id='menu-close' ng-class='$parent.appMenu' ng-click="$parent.appMenu = ''"></a>
+      </li>
+      <li>
+        <a animate-scroll href='#play-media'>
+          Play media
+        </a>
+      </li>
+      <li>
+        <a animate-scroll href='#epic-buttons'>
+          Epic buttons
+        </a>
+      </li>
+      <li>
+        <a animate-scroll href='#say'>
+          Say
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<section id='play-media'>
+  <div class='title'>Play media</div>
+  <div class='content'>
+    <form ng-submit='mPlay(mediaUrl)'>
+      <p>This allows you to play urls «on the fly»</p>
+      <div class='play-interface'>
+        <input class='play-media' ng-model='mediaUrl'>
+        <input id='play' type='submit' value='Play'>
+        <a id='stop' ng-click='mStop()'>Stop</a>
+      </div>
+    </form>
+  </div>
+</section>
+<section id='epic-buttons'>
+  <div class='title'>Epic buttons</div>
+  <div class='content'>
+    <form id='bSubmit' ng-submit='(bPlay(buttonsFiltered[0].url))'>
+      <label for='#search-button'>
+        Search Button:
+      </label>
+      <input id='search-button' ng-model='search.label' type='text'>
+    </form>
+    <button ng-click='bPlay(button.url)' ng-repeat='button in buttonsFiltered = (buttons | filter:search)'>
+      {{button.label}}
+    </button>
+    <div id='add-button'>
+      <ng-form>
+        <input class='label' ng-model='button.label' placeholder='Label' type='text'>
+        <input class='url' ng-model='button.url' placeholder='URL' type='text'>
+        <button ng-click='addButton()'>Add button</button>
+      </ng-form>
+    </div>
+  </div>
+</section>
+<section id='say'>
+  <div class='title'>Say</div>
+  <div class='content'>
+    <form ng-submit='sPlay(sText, sLang)'>
+      <label class='subtitle' for='say-text'>This is the say</label>
+      <textarea id='say-text' ng-model='sText'></textarea>
+      <p class='say-interface'>
+        <select class='language' ng-init="sLang = 'es'" ng-model='sLang'>
+          <option value='es'>Spanish</option>
+          <option value='en'>English</option>
+        </select>
+        <input type='submit' value='Say'>
+      </p>
+    </form>
+  </div>
+</section>
