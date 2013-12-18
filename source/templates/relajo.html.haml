@@ -43,6 +43,12 @@
         %input.url{"ng-model" => "button.url", :placeholder => "URL", :type => "text"}
         %button(ng-click="addButton()") Add button
 
+%section#bitcoin
+  .title Bitcoin value
+  .content
+    #btc-quote
+    %script{:src => "//cdn-gh.firebase.com/btcquote/embed.js", :type => "text/javascript"}
+
 %section#say
   .title Say
   .content
