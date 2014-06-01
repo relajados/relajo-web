@@ -21,7 +21,6 @@ RelajoController = ($scope, $http, ngProgressLite) ->
 
   $scope.mStop = -> mplayer.stop()
 
-
   $scope.addButton = () ->
     ngProgressLite.start()
     $http(
@@ -39,6 +38,28 @@ RelajoController = ($scope, $http, ngProgressLite) ->
       ngProgressLite.done()
     )
 
-
+  $scope.speech = () ->
+    $scope.recognition = new webkitSpeechRecognition()
+    $scope.recognition.continuous = false
+    $scope.recognition.interimResults = true
+    $scope.recognition.onstart = () ->
+      console.log("start")
+    $scope.recognition.onresult = (event) ->
+      console.log("result:" + event)
+      final_transcript = ""
+      interim_transcript = ""
+      i = event.resultIndex
+      while i < event.results.length
+        if event.results[i].isFinal
+          final_transcript += event.results[i][0].transcript
+        else
+          interim_transcript += event.results[i][0].transcript
+        ++i
+      alert(final_transcript)
+    $scope.recognition.onerror = (event) ->
+      console.log("error:" + event)
+    $scope.recognition.onend = () ->
+      console.log("end")
+    $scope.recognition.start()
 
 angular.module("app.controllers").controller "RelajoController", [ '$scope', '$http', 'ngProgressLite', RelajoController ]

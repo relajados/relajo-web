@@ -16,6 +16,9 @@
       %li
         %a(href="#say" animate-scroll)
           Say
+      %li
+        %a(href="#speech" animate-scroll)
+          Speech
 
 %section#play-media
   .title Play media
@@ -60,3 +63,9 @@
           %option{value: 'es'} Spanish
           %option{value: 'en'} English
         %input(type="submit" value="Say")
+
+%section#speech
+  .title Speech
+  .content
+    %ng-form
+      %button(ng-click="speech()") Speech
